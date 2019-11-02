@@ -1,2 +1,26 @@
+# Editor directories and files
 .idea
-*.sum
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# frontend
+frontend/DS_Store
+frontend/node_modules
+frontend//dist
+
+## local env files
+frontendd/.env.local
+frontend/.env.*.local
+
+## Log files
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+
+# backend
+backend/*.sum
