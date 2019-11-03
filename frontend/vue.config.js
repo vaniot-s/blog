@@ -10,7 +10,7 @@ const name = 'Vaniot'
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
-const port = process.env.port || process.env.npm_config_port || 89// dev port
+const port = process.env.port || process.env.npm_config_port || 1024// dev port
 
 
 //　导出一个包含了选项的对象

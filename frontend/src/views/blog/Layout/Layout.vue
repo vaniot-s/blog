@@ -1,6 +1,7 @@
 <template>
   <div class="blog-layout">
-    <Nav></Nav>
+<!--    <Nav></Nav>-->
+    <Container></Container>
     <Bottom></Bottom>
   </div>
 </template>
@@ -8,14 +9,15 @@
 <script>
   import Nav from "@/components/Nav/Nav";
   import Bottom from  "@/components/Bottom"
+  import Container from "@/components/Container/Container";
   export default {
       name: "Layout",
-      components: {Bottom, Nav},
+      components: {Container, Bottom, Nav},
   }
 </script>
 
 <style scoped>
 .blog-layout {
-  background-color: #F0F0F0;
+  background-color: #F1F1F1;
 }
 </style>

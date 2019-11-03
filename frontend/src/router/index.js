@@ -4,7 +4,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-
+// import blogRouter from './Modules/blog'
 export const constantRoutes = [
   {
     path: '/',
@@ -13,13 +13,16 @@ export const constantRoutes = [
     name: 'app',
     meta: { title: 'vaniot' }
   },
-  // {
-  //   path: '/admin',
-  //   component: () => import('@/views/instances'),
-  //   hidden: true,
-  //   name: 'instance',
-  //   meta: { title: 'instances' }
-  // },
+  {
+    path: '/404',
+    component: () => import('@/views/error-page/404'),
+    hidden: true
+  },
+  {
+    path: '/401',
+    component: () => import('@/views/error-page/401'),
+    hidden: true
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
@@ -29,7 +32,9 @@ const createRouter = () => new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
-
+export const asyncRoutes = [
+  // blogRouter
+]
 const router = createRouter()
 
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
