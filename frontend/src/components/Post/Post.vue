@@ -1,12 +1,22 @@
 <template>
-  <el-card class="box-card">
-    <div slot="header" class="clearfix">
-      <span>文章标题</span>
-    </div>
-    <div v-for="o in 4" :key="o" class="text item">
-      {{'列表内容 ' + o }}
-    </div>
-  </el-card>
+  <a-card hoverable style="width: 600px">
+    <img
+      alt="example"
+      src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+      slot="cover"
+    />
+    <template class="ant-card-actions" slot="actions">
+      <a-icon type="setting" />
+      <a-icon type="edit" />
+      <a-icon type="ellipsis" />
+    </template>
+    <a-card-meta title="Card title" description="This is the description">
+      <a-avatar
+        slot="avatar"
+        src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+      />
+    </a-card-meta>
+  </a-card>
 </template>
 
 <script>

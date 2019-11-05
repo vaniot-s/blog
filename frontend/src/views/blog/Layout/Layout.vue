@@ -1,6 +1,6 @@
 <template>
   <div class="blog-layout">
-<!--    <Nav></Nav>-->
+    <Nav></Nav>
     <Container></Container>
     <Bottom></Bottom>
   </div>
