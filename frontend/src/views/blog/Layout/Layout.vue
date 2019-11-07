@@ -3,8 +3,8 @@
     <Nav></Nav>
     <a-layout-content :style="{ padding: '0 100px', marginTop: '64px' }">
       <Container></Container>
-      <Bottom></Bottom>
     </a-layout-content>
+    <Bottom></Bottom>
   </a-layout>
 </template>
 
