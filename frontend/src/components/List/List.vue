@@ -1,61 +1,87 @@
 <template>
   <div class="container">
-    <a-list itemLayout="vertical" size="large" :pagination="pagination" :dataSource="listData">
-      <div slot="footer"><b>ant design vue</b> footer part</div>
-      <a-list-item slot="renderItem" slot-scope="item, index" key="item.title">
-        <template slot="actions" v-for="{type, text} in actions">
-        <span :key="type">
-          <a-icon :type="type" style="margin-right: 8px" />
-          {{text}}
-        </span>
-        </template>
-        <img
-          slot="extra"
-          width="272"
-          alt="logo"
-          src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-        />
-        <a-list-item-meta :description="item.description">
-          <a slot="title" :href="item.href">{{item.title}}</a>
-          <a-avatar slot="avatar" :src="item.avatar" />
-        </a-list-item-meta>
-        {{item.content}}
+    <a-list itemLayout="horizontal" >
+      <a-list-item >
+          <a-card hoverable size="default">
+            <img
+              alt="example"
+              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+              slot="cover"
+            />
+            <template class="ant-card-actions" slot="actions">
+              <a-icon type="setting" />
+              <a-icon type="edit" />
+              <a-icon type="ellipsis" />
+            </template>
+            <a-card-meta title="Card title" description="This is the description">
+              <a-avatar
+                slot="avatar"
+                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+              />
+            </a-card-meta>
+          </a-card>
       </a-list-item>
+<!--      <a-list-item slot="renderItem" slot-scope="item, index">-->
+<!--        <a slot="actions">edit</a>-->
+<!--        <a slot="actions">more</a>-->
+<!--        <a-list-item-meta-->
+<!--          description="Ant Design, a design language for background applications, is refined by Ant UED Team"-->
+<!--        >-->
+<!--          <a slot="title" href="https://vue.ant.design/">{{item.name.last}}</a>-->
+<!--          <a-avatar-->
+<!--            slot="avatar"-->
+<!--            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"-->
+<!--          />-->
+<!--        </a-list-item-meta>-->
+<!--        <div>content</div>-->
+<!--      </a-list-item>-->
     </a-list>
   </div>
 </template>
 
 <script>
-    const listData = [];
-    for (let i = 0; i < 23; i++) {
-        listData.push({
-            href: 'https://vue.ant.design/',
-            title: `ant design vue part ${i}`,
-            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-            description:
-                'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-            content:
-                'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-        });
-    }
+    // import reqwest from 'reqwest';
+    //
+    // const fakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
 
     export default {
         name: "List",
         data() {
             return {
-                listData,
-                pagination: {
-                    onChange: page => {
-                        console.log(page);
-                    },
-                    pageSize: 3,
-                },
-                actions: [
-                    { type: 'star-o', text: '156' },
-                    { type: 'like-o', text: '156' },
-                    { type: 'message', text: '2' },
-                ],
+                loading: true,
+                loadingMore: false,
+                showLoadingMore: true,
+                data: [],
             };
+        },
+        mounted() {
+            this.getData(res => {
+                this.loading = false;
+                this.data = res.results;
+            });
+        },
+        methods: {
+            getData(callback) {
+                reqwest({
+                    url: fakeDataUrl,
+                    type: 'json',
+                    method: 'get',
+                    contentType: 'application/json',
+                    success: res => {
+                        callback(res);
+                    },
+                });
+            },
+            onLoadMore() {
+                this.loadingMore = true;
+                this.getData(res => {
+                    this.data = this.data.concat(res.results);
+                    this.loadingMore = false;
+                    this.$nextTick(() => {
+                        window.dispatchEvent(new Event('resize'));
+                    });
+                });
+            },
         },
     };
 </script>

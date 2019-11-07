@@ -1,8 +1,14 @@
 <template>
-  <a-layout>
+  <a-layout :style="{ background: '#F1F1F1' }">
     <Nav></Nav>
-    <a-layout-content :style="{ padding: '0 100px', marginTop: '64px' }">
-      <Container></Container>
+    <a-layout-content :style="{  marginTop: '22px', }" >
+      <a-row>
+        <a-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4"></a-col>
+        <a-col :xs="16" :sm="16" :md="16" :lg="16" :xl="16">
+          <Container></Container>
+        </a-col>
+        <a-col :xs="4" :sm="4" :md="4" :lg="4" :xl="4"></a-col>
+      </a-row>
     </a-layout-content>
     <Bottom></Bottom>
   </a-layout>
@@ -19,7 +25,4 @@
 </script>
 
 <style scoped>
-.blog-layout {
-  background-color: #F1F1F1;
-}
 </style>
