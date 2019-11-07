@@ -1,5 +1,5 @@
 <template>
-  <a-card hoverable style="width: 600px">
+  <a-card hoverable size="large">
     <img
       alt="example"
       src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"

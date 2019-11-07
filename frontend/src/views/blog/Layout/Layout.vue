@@ -1,9 +1,11 @@
 <template>
-  <div class="blog-layout">
+  <a-layout>
     <Nav></Nav>
-    <Container></Container>
-    <Bottom></Bottom>
-  </div>
+    <a-layout-content :style="{ padding: '0 100px', marginTop: '64px' }">
+      <Container></Container>
+      <Bottom></Bottom>
+    </a-layout-content>
+  </a-layout>
 </template>
 
 <script>
