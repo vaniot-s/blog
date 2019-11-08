@@ -1,15 +1,19 @@
 <template>
-<div class="container">
+<div class="container" >
   <a-row>
-    <a-col :xs="24" :sm="24" :md="24" :lg="16" :xl="16">
+    <a-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
       <Post></Post>
-      <Post></Post>
-      <Post></Post>
-      <Post></Post>
-      <List></List>
+      <a-row>
+        <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+           <Carousel></Carousel>
+        </a-col>
+        <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+            <List></List>
+        </a-col>
+      </a-row>
     </a-col>
-    <a-col :xs="0" :sm="0" :md="0" :lg="2" :xl="2"  ></a-col>
-    <a-col :xs="24" :sm="24" :md="24" :lg="6" :xl="6"  >
+    <a-col :xs="0" :sm="0" :md="0" :lg="1" :xl="1"  ></a-col>
+    <a-col :xs="24" :sm="24" :md="24" :lg="5" :xl="5"  >
       <a-card hoverable size="default">
         <img
           alt="example"
@@ -30,19 +34,21 @@
       </a-card>
     </a-col>
   </a-row>
-　
 </div>
 </template>
 
 <script>
-    import Post from "../Post/Post";
-    import List from "../List/List";
+    import Post from "@/components/Post/Post";
+    import List from "@/components/List/List";
+    import Carousel from "@/components/Carousel";
     export default {
         name: "Container",
-        components: {List, Post}
+        components: {List, Post, Carousel}
     }
 </script>
 
 <style scoped>
-
+.container{
+  margin-top: 20px;
+}
 </style>
