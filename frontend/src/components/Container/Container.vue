@@ -14,7 +14,9 @@
     </a-col>
     <a-col :xs="0" :sm="0" :md="0" :lg="1" :xl="1"  ></a-col>
     <a-col :xs="24" :sm="24" :md="24" :lg="5" :xl="5"  >
-      <a-card hoverable size="default">
+      <a-list :grid="{ gutter: 16, column: 1 }" >
+        <a-list-item >
+           <a-card hoverable size="default">
         <img
           alt="example"
           src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
@@ -32,6 +34,17 @@
           />
         </a-card-meta>
       </a-card>
+        </a-list-item>
+        <a-list-item >
+          <TagsCard></TagsCard>
+        </a-list-item>
+        <a-list-item >
+          <ArchesCard></ArchesCard>
+        </a-list-item>
+        <a-list-item >
+          <FriendLink></FriendLink>
+        </a-list-item>
+      </a-list>
     </a-col>
   </a-row>
 </div>
@@ -40,10 +53,13 @@
 <script>
     import Post from "@/components/Post/Post";
     import List from "@/components/List/List";
-    import Carousel from "@/components/Carousel";
+    import TagsCard from "@/components/TagsCard";
+    import ArchesCard from "@/components/ArchesCard";
+    import FriendLink from "@/components/FriendLink/index";
+
     export default {
         name: "Container",
-        components: {List, Post, Carousel}
+        components: {FriendLink, List, Post, TagsCard, ArchesCard}
     }
 </script>
 
