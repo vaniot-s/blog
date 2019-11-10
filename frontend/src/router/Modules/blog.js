@@ -1,8 +1,8 @@
-// import Layout from '@/layout'
+import Layout from '@/views/blog/Layout'
 
 const blogRouter = {
   path: '',
-  // components: Layout,
+  components: Layout,
   redirect: 'noRedirect',
   name: 'Vaniot',
   meta: {
@@ -10,6 +10,12 @@ const blogRouter = {
     icon: 'chart'
   },
   children: [
+    {
+      path: '',
+      component: () => import('@/views/blog/Home'),
+      name: 'Home',
+      meta: { title: 'Home', noCache: true }
+    },
     {
       path: 'post',
       component: () => import('@/views/blog/Post'),

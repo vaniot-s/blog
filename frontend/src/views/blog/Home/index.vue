@@ -5,7 +5,7 @@
 <script>
   import List from "@/components/List/List";
     export default {
-        name: "Index",
+        name: "Home",
         components: {
             List
         }

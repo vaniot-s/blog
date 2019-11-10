@@ -56,10 +56,10 @@
     import TagsCard from "@/components/TagsCard";
     import ArchesCard from "@/components/ArchesCard";
     import FriendLink from "@/components/FriendLink/index";
-
+    import Carousel from "@/components/Carousel/index";
     export default {
         name: "Container",
-        components: {FriendLink, List, Post, TagsCard, ArchesCard}
+        components: {FriendLink, List, Post, TagsCard, ArchesCard, Carousel}
     }
 </script>
 

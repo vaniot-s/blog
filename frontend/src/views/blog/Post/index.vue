@@ -1,10 +1,12 @@
 <template>
-
+<Container></Container>
 </template>
 
 <script>
+    import Container from "@/components/Container/Container";
     export default {
-        name: "index"
+        name: "Post",
+        components: {Container}
     }
 </script>
 
