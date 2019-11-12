@@ -2,15 +2,7 @@
 <div class="container" >
   <a-row>
     <a-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
-      <Post></Post>
-      <a-row>
-        <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-           <Carousel></Carousel>
-        </a-col>
-        <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-            <List></List>
-        </a-col>
-      </a-row>
+      <router-view :key="key" />
     </a-col>
     <a-col :xs="0" :sm="0" :md="0" :lg="1" :xl="1"  ></a-col>
     <a-col :xs="24" :sm="24" :md="24" :lg="5" :xl="5"  >
@@ -51,15 +43,17 @@
 </template>
 
 <script>
-    import Post from "@/components/Post/Post";
-    import List from "@/components/List/List";
     import TagsCard from "@/components/TagsCard";
     import ArchesCard from "@/components/ArchesCard";
     import FriendLink from "@/components/FriendLink/index";
-    import Carousel from "@/components/Carousel/index";
     export default {
         name: "Container",
-        components: {FriendLink, List, Post, TagsCard, ArchesCard, Carousel}
+        components: {FriendLink, TagsCard, ArchesCard},
+        computed: {
+            key() {
+                return this.$route.path
+            }
+        }
     }
 </script>
 

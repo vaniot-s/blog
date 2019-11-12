@@ -1,19 +1,50 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import blogRouter from "./Modules/blog";
-import adminRouter from "./Modules/admin";
+// import blogRouter from "./Modules/blog";
+// import adminRouter from "./Modules/admin";
 
 
 Vue.use(Router)
 
-// import blogRouter from './Modules/blog'
+import Layout from '@/views/blog/Layout'
 export const constantRoutes = [
   {
     path: '/',
-    component: () => import('@/views/blog/Layout'),
+    component: Layout,
     hidden: true,
-    name: 'app',
-    meta: { title: 'vaniot' }
+    meta: { title: 'vaniot' },
+    children: [
+  {
+    path: '',
+    component: () => import('@/views/blog/Home'),
+    name: 'Home',
+    meta: { title: 'Home', noCache: true }
+  },
+  {
+    path: 'posts',
+    component: () => import('@/views/blog/Posts'),
+    name: 'Posts',
+    meta: { title: 'Posts', noCache: true }
+  },
+  {
+    path: 'tags',
+    component: () => import('@/views/blog/Tags'),
+    name: 'Tags',
+    meta: { title: 'Tags', noCache: true }
+  },
+  {
+    path: 'categories',
+    component: () => import('@/views/blog/Categories'),
+    name: 'Categories',
+    meta: { title: 'Categories', noCache: true }
+  },
+  {
+    path: 'timeline',
+    component: () => import('@/views/blog/TimeLine'),
+    name: 'TimeLine',
+    meta: { title: 'TimeLine', noCache: true }
+  },
+]
   },
   // {
   //   path: '/404',
@@ -30,8 +61,8 @@ export const constantRoutes = [
 ]
 
 export const asyncRoutes = [
-  blogRouter,
-  adminRouter
+  // blogRouter,
+  // adminRouter
 ]
 
 const createRouter = () => new Router({

@@ -1,9 +1,5 @@
 <template>
-  <div>
     <a-row>
-<!--      <a-affix :offsetTop="this.top">-->
-<!--        <a-button type="primary" >Affix top</a-button>-->
-<!--      </a-affix>-->
       <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
         <a-list :grid="{ gutter: 16, column: 1 }" >
           <a-list-item >
@@ -14,8 +10,6 @@
           <a-list-item>
             <a-card title="文章标题">
               <a-list :grid="{ gutter: 16, column: 1 }" >
-                <a-list-item >
-        　　    </a-list-item>
                 <a-list-item >
                   <a-card :bordered="false" >Card content</a-card>
                 </a-list-item>
@@ -122,7 +116,6 @@
         </a-list>
       </a-col>
     </a-row>
-  </div>
 </template>
 
 <script>

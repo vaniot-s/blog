@@ -1,13 +1,13 @@
 <template>
-<List></List>
+<Post></Post>
 </template>
 
 <script>
-  import List from "@/components/List";
+    import Post from "@/components/Post/Post";
     export default {
-        name: "Home",
+        name: "Posts",
         components: {
-            List
+            Post
         }
     }
 </script>
