@@ -4,8 +4,7 @@
     <a-col :xs="24" :sm="24" :md="24" :lg="17" :xl="17">
       <router-view :key="key" />
     </a-col>
-    <a-col :xs="0" :sm="0" :md="0" :lg="1" :xl="1"  ></a-col>
-    <a-col :xs="24" :sm="24" :md="24" :lg="5" :xl="5"  >
+    <a-col :xs="24" :sm="24" :md="24" :lg="{ span: 5, offset: 1 }" :xl="{ span: 5, offset: 1 }"  >
       <a-list :grid="{ gutter: 16, column: 1 }" >
         <a-list-item >
            <a-card hoverable size="default">

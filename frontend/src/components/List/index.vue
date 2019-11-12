@@ -1,11 +1,9 @@
 <template>
-  <a-row>
-    <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+  <a-list :grid="{ gutter: 16, column: 1 }">
+    <a-list-item  >
       <Carousel></Carousel>
-    </a-col>
-    <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-      <a-list :grid="{ gutter: 16, column: 1 }" :dataSource="data">
-        <a-list-item slot="renderItem" slot-scope="item, index">
+    </a-list-item>
+    <a-list-item >
           <a-card hoverable size="default">
             <img
               alt="example"
@@ -25,36 +23,16 @@
             </a-card-meta>
           </a-card>
         </a-list-item>
-      </a-list>
-    </a-col>
-  </a-row>
+  </a-list>
 </template>
 
 <script>
     import Carousel from "@/components/Carousel/index";
 
-    const data = [
-        {
-            title: 'Title 1',
-        },
-        {
-            title: 'Title 2',
-        },
-        {
-            title: 'Title 3',
-        },
-        {
-            title: 'Title 4',
-        },
-    ];
+
     export default {
         name: "List",
-        components: {Carousel},
-        data() {
-            return {
-                data,
-            };
-        },
+        components: {Carousel}
     };
 </script>
 

@@ -16,7 +16,7 @@
 <style scoped>
   .ant-carousel >>> .slick-slide {
     text-align: center;
-    height: 160px;
+    height: 260px;
     line-height: 160px;
     background: #364d79;
     overflow: hidden;
